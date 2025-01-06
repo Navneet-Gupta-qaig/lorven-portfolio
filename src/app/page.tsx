@@ -4,7 +4,6 @@ import Hero from "@/components/Hero";
 import Navbar from "@/components/navbar";
 import ProductDisplay from "@/components/ProductDisplay";
 import Image from "next/image";
-import Link from "next/link";
 export default function Home() {
   return (
     <div className="relative min-h-screen">
@@ -35,7 +34,7 @@ export default function Home() {
         <Hero />
         <AboutSection />
         <ProductDisplay />
-        <ContactUs/>
+        <ContactUs />
       </main>
     </div>
   );
