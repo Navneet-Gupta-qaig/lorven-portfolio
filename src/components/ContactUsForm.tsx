@@ -6,31 +6,50 @@ const ContactUsForm = () => {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
-    console.log(formData);
-    // const response = await fetch("/api/submit", {
-    //   method: "POST",
-    //   body: formData,
-    // });
 
-    // // Handle response if necessary
-    // const data = await response.json();
-    // ...
+    console.log(formData);
+    const webhookUrl =
+      "https://script.google.com/a/macros/thequantum.ai/s/AKfycbxgCDM8zhIJR0vFrdZMYjv9EQe1BZFH6HJ4h1W8lqRS1Ex0IGZc6j-FMxm-VYL0QHJVeg/exec"; // Replace with your webhook URL
+
+    try {
+      const response = await fetch(webhookUrl, {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error submitting form: ${response.statusText}`);
+      }
+
+      console.log("Form submitted successfully!");
+    } catch (error) {
+      console.error(error);
+    }
   }
   return (
-    <form className="flex flex-col  gap-4 w-full  " onSubmit={onSubmit}>
-      <label htmlFor="name">Name:</label>
+    <form
+      className="flex flex-col  gap-4 w-full  dark:text-black"
+      onSubmit={onSubmit}
+    >
+      <label className="dark:text-white" htmlFor="name">
+        Name:
+      </label>
       <input
         type="text"
         id="name"
         className="border border-gray-300 p-2 rounded-md"
       />
-      <label htmlFor="email">Email or Phone:</label>
+      <label htmlFor="email" className="dark:text-white">
+        Email or Phone:
+      </label>
       <input
         type="text"
         id="email"
         className="border border-gray-300 p-2 rounded-md"
       />
-      <label htmlFor="subject">Subject:</label>
+      <label className="dark:text-white" htmlFor="subject">
+        Subject:
+      </label>
       <select
         id="subject"
         name="subject"
@@ -46,7 +65,9 @@ const ContactUsForm = () => {
         <option value="Feedback/Suggestions">Feedback/Suggestions</option>
       </select>
 
-      <label htmlFor="message">Message:</label>
+      <label className="dark:text-white" htmlFor="message">
+        Message:
+      </label>
       <textarea
         id="message"
         rows={4}

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import React from "react";
 
 const Navbar = () => {
@@ -18,22 +19,13 @@ const Navbar = () => {
         </div>
 
         <nav className=" gap-6 items-center md:flex hidden">
-          <Link
-            href="#home"
-            className="text-white/80 hover:text-white transition-colors"
-          >
+          <Link href="#home" className=" transition-colors ">
             Home
           </Link>
-          <Link
-            href="#about"
-            className="text-white/80 hover:text-white transition-colors"
-          >
+          <Link href="#about" className=" transition-colors">
             About
           </Link>
-          <Link
-            href="#products"
-            className="text-white/80 hover:text-white transition-colors"
-          >
+          <Link href="#products" className=" transition-colors">
             Products
           </Link>
           <Link
@@ -43,7 +35,7 @@ const Navbar = () => {
     shadow-[0_0_15px_rgba(59,130,246,0.5)]
     hover:shadow-[0_0_25px_rgba(59,130,246,0.7)]"
           >
-            <span className="relative text-white font-semibold">Join Us</span>
+            <span className="relative font-semibold">Join Us</span>
           </Link>
         </nav>
       </div>

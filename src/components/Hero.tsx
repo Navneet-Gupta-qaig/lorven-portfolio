@@ -7,7 +7,7 @@ const Hero = () => {
       <div className=" px-6 md:px-12">
         <div className="my-32 opacity-0 animate-[fadeIn_1s_ease-in_forwards]">
           <h1
-            className="w-4/5 text-5xl md:text-6xl font-bold bg-gradient-to-r dark:text-white text-slate-800 bg-clip-text text-transparent 
+            className="w-4/5 text-5xl md:text-6xl font-bold bg-gradient-to-r dark:text-white text-slate-800 bg-clip-text 
           drop-shadow-[0_0_15px_rgba(213,186,21,0.5)] "
           >
             From Concept to Creation: Lorven AI Powers the Future of
